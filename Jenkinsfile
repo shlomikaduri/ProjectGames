@@ -15,10 +15,10 @@ pipeline {
             }
         stage('terminate our tested container') 
         {
-            steps {
-                bat 'docker-compose down'
+            steps { dir('C:\\ProjectGames\\') {
+                bat 'docker-compose down' }
             }
-            }            
+        }            
         }
         }
 
