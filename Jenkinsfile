@@ -4,12 +4,12 @@ pipeline {
     stages {
 	    stage('Build our docker image') {
             steps { dir('C:\\ProjectGames\\') {
-                bat 'docker-compose up --build -d' }
+                bat 'docker-compose up --build' }
             }
         }
         stage('e2e.py module it will perform a selenium test') 
         {
-            steps { dir('C:\\devops\\ProjectGames\\Tests') {
+            steps { dir('C:\\ProjectGames\\Tests') {
                 bat 'python e2e.py' }
             }
             }
@@ -20,11 +20,12 @@ pipeline {
 
             }
             }
-	    stage('Build our docker image') {
-            steps { dir('C:\\ProjectGames\\') {
-                bat 'docker-compose down' }
+        stage('terminate our tested container') 
+        {
+            steps {
+                bat 'docker-compose down'
             }
-        }           
+            }            
         }
         }
 
