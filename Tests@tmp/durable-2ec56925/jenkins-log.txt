@@ -1,0 +1,22 @@
+
+C:\ProjectGames\Tests>python e2e.py 
+192.168.99.102
+Traceback (most recent call last):
+  File "e2e.py", line 45, in <module>
+    main_function()
+  File "e2e.py", line 38, in main_function
+    if(scores_test_service('http://192.168.99.102:5000/'))==True:
+  File "e2e.py", line 25, in scores_test_service
+    score = driver.find_element_by_id("score")
+  File "C:\Users\Kaduris\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 360, in find_element_by_id
+    return self.find_element(by=By.ID, value=id_)
+  File "C:\Users\Kaduris\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 978, in find_element
+    'value': value})['value']
+  File "C:\Users\Kaduris\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\Kaduris\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"id","selector":"score"}
+  (Session info: chrome=73.0.3683.103)
+  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Windows NT 10.0.16299 x86_64)
+
