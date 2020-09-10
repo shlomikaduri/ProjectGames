@@ -16,7 +16,8 @@ The main function will return -1 as an OS exit code if the tests failed and 0 if
 '''
 
 def scores_test_service(app_url):
-    driver = webdriver.Chrome(executable_path=r'C:\Users\Kaduris\Downloads\chromedriver_win32\chromedriver.exe')
+
+    driver = webdriver.Chrome(executable_path=r'C:\ProjectGames\chromedriver_win32\chromedriver.exe')
     driver.implicitly_wait(10)
 
     driver.get(app_url)
@@ -30,12 +31,14 @@ def scores_test_service(app_url):
         return False
 
 
+
+
 '''
 This function is call our tests function
 The main function will return -1 as an OS exit code if the tests failed and 0 if it passed."
 '''
 def main_function():
-    if(scores_test_service('http://192.168.99.102:5000/'))==True:
+    if(scores_test_service('http://192.168.99.102:8777/'))==True:
         print("PASS")
         return 0
     else:
