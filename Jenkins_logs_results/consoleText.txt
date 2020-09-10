@@ -1,0 +1,116 @@
+Started by user Shlomi Kaduri
+Obtained Jenkinsfile from git https://github.com/shlomikaduri/ProjectGames.git
+Running in Durability level: MAX_SURVIVABILITY
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in C:\Users\Kaduris\.jenkins\workspace\WorldOfGames_Level2
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+No credentials specified
+ > git.exe rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git.exe config remote.origin.url https://github.com/shlomikaduri/ProjectGames.git # timeout=10
+Fetching upstream changes from https://github.com/shlomikaduri/ProjectGames.git
+ > git.exe --version # timeout=10
+ > git.exe fetch --tags --force --progress -- https://github.com/shlomikaduri/ProjectGames.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+ > git.exe rev-parse "refs/remotes/origin/origin/master^{commit}" # timeout=10
+Checking out Revision d28448adb200f0fb6de793dcea42b2b74ffa0b89 (refs/remotes/origin/master)
+ > git.exe config core.sparsecheckout # timeout=10
+ > git.exe checkout -f d28448adb200f0fb6de793dcea42b2b74ffa0b89 # timeout=10
+Commit message: "update port to 5000"
+ > git.exe rev-list --no-walk 57ddc09117d0a0879ac5c6bbcba5789eb7e24997 # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Build our docker image)
+[Pipeline] dir
+Running in C:\ProjectGames
+[Pipeline] {
+[Pipeline] bat
+
+C:\ProjectGames>docker-compose up --build -d 
+Building web
+Step 1/11 : FROM python:3-alpine
+ ---> 0f03316d4a27
+Step 2/11 : COPY GuessGame.py /
+ ---> Using cache
+ ---> 01a3994c4091
+Step 3/11 : COPY Live.py /
+ ---> Using cache
+ ---> 98fad5683e07
+Step 4/11 : COPY MainGame.py /
+ ---> Using cache
+ ---> 218abe1f1fa9
+Step 5/11 : COPY MainScores.py /
+ ---> Using cache
+ ---> 499532e40fe1
+Step 6/11 : COPY MemoryGame.py /
+ ---> Using cache
+ ---> 26f71f15d0eb
+Step 7/11 : COPY Score.py /
+ ---> Using cache
+ ---> 7d2ce28c435a
+Step 8/11 : COPY Scores.txt /
+ ---> Using cache
+ ---> 7fa4a8aae88a
+Step 9/11 : COPY Utils.py /
+ ---> Using cache
+ ---> ff80863dec20
+Step 10/11 : RUN pip install flask
+ ---> Using cache
+ ---> 71ae1f9f4725
+Step 11/11 : CMD ["python3", "./MainScores.py"]
+ ---> Using cache
+ ---> c942fa5e576c
+Successfully built c942fa5e576c
+Successfully tagged projectgames_web:latest
+projectgames_redis_1 is up-to-date
+Recreating projectgames_web_1 ... 
+[1A[2KRecreating projectgames_web_1 ... [32mdone[0m[1B
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (e2e.py module it will perform a selenium test)
+[Pipeline] dir
+Running in C:\ProjectGames\Tests
+[Pipeline] {
+[Pipeline] bat
+
+C:\ProjectGames\Tests>python e2e.py 
+Scores Game
+1010
+Fail
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (terminate our tested container)
+[Pipeline] dir
+Running in C:\ProjectGames
+[Pipeline] {
+[Pipeline] bat
+
+C:\ProjectGames>docker-compose down 
+Stopping projectgames_web_1   ... 
+Stopping projectgames_redis_1 ... 
+[1A[2KStopping projectgames_redis_1 ... [32mdone[0m[1B[2A[2KStopping projectgames_web_1   ... [32mdone[0m[2BRemoving projectgames_web_1   ... 
+Removing projectgames_redis_1 ... 
+[1A[2KRemoving projectgames_redis_1 ... [32mdone[0m[1B[2A[2KRemoving projectgames_web_1   ... [32mdone[0m[2BRemoving network projectgames_default
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
