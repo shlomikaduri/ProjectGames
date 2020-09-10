@@ -4,7 +4,7 @@ pipeline {
     stages {
 	    stage('Build our docker image') {
             steps { dir('C:\\devops\\ProjectGames\\') {
-                bat 'docker-compose up --build' }
+                bat 'docker-compose up --build -d' }
             }
         }
         stage('e2e.py module it will perform a selenium test') 
