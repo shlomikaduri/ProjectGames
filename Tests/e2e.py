@@ -38,7 +38,7 @@ This function is call our tests function
 The main function will return -1 as an OS exit code if the tests failed and 0 if it passed."
 '''
 def main_function():
-    if(scores_test_service('http://192.168.99.102:8777/'))==True:
+    if(scores_test_service('http://192.168.99.102:5000/'))==True:
         print("PASS")
         return 0
     else:
