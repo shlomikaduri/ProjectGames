@@ -1,13 +1,5 @@
 pipeline {
     agent any
-
-	script {
-			// Show the select input modal
-		   def INPUT_PARAMS = input message: 'Please Provide Parameters', ok: 'Next',
-							parameters: [
-							choice(name: 'IMAGE_TAG', choices: getDockerImages(), description: 'Available Docker Images')]
-		}
-
     stages {
 	    stage('Build our docker image') {
             steps { dir('C:\\ProjectGames\\') {
@@ -25,8 +17,14 @@ pipeline {
             steps { dir('C:\\ProjectGames\\') {
                 bat 'docker-compose down' }
             }
-        }            
+        }      
+		stage('print') {
+		steps {
+							 echo 'Hi, this is Zulaikha from edureka'
+						 }		
         }
+
+}
 
 }
 
