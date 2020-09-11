@@ -34,7 +34,11 @@ pipeline {
                             branch "master"
                        }
                  }
-				}
+				 steps {
+                       echo "Hello"
+						}
+                 }
+				
 }
 
 }
