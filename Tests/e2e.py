@@ -39,7 +39,7 @@ The main function will return -1 as an OS exit code if the tests failed and 0 if
 '''
 def main_function():
     print("Hello, please enter application URL (for example http://192.168.99.102:5000/)")
-    application_URL = input()
+    application_URL = 'http://192.168.99.102:5000/' #input()
     if(scores_test_service(application_URL)==True):
         print("PASS")
         return 0
