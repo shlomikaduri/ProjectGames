@@ -20,7 +20,7 @@ def scores_test_service(app_url):
         driver = webdriver.Chrome(executable_path=r'C:\ProjectGames\chromedriver_win32\chromedriver.exe')
     except:
         print("Error : please check chromedriver location \n\r Required to be locted at C:\ProjectGames\chromedriver_win32\chromedriver.exe")
-        exit()
+        
 
     driver.implicitly_wait(10)
     driver.get(app_url)
