@@ -45,7 +45,7 @@ def main_function():
         return 0
     else:
         print("Fail")
-        return -1
+        raise Exception('Test fail')
 
 main_function()
 
