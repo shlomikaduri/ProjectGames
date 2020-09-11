@@ -8,7 +8,6 @@ COPY Score.py /
 COPY Scores.txt /
 COPY Utils.py /
 
-RUN pip install flask
-
+RUN install -r requirements.txt
 
 CMD ["python3", "./MainScores.py"]
