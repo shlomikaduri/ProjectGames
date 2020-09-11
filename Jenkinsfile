@@ -6,6 +6,15 @@ pipeline {
                 bat 'docker-compose up --build -d' }
             }
         }
+		stage('e2e.py module it will perform a selenium test') 
+        {
+            steps { dir('C:\\ProjectGames\\') {
+                bat 'pip install -r requirements.txt' }
+            }
+            }
+		
+		
+
         stage('e2e.py module it will perform a selenium test') 
         {
             steps { dir('C:\\ProjectGames\\Tests') {

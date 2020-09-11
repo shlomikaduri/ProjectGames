@@ -8,6 +8,4 @@ COPY Score.py /
 COPY Scores.txt /
 COPY Utils.py /
 
-RUN install -r requirements.txt
-
 CMD ["python3", "./MainScores.py"]
