@@ -16,6 +16,7 @@ pipeline {
         {
             steps { dir('C:\\ProjectGames\\') {
                 bat 'docker-compose down' }
+				currentBuild.result = 'FAILURE'
             }
         }      
 
