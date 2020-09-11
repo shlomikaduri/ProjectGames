@@ -28,7 +28,7 @@ Jenkinsfile
 This will consist the jenkins pipeline which will contain the following stages:
 1. Checkout - checkout the repository (containing the project).
 2. Build - Build our docker image.
-3. Run - will run our dockerized application and will expose it to port 8777 on localhost.
+3. Run - will run our dockerized application and will expose it to port 5000 on localhost.
 4. Test - e2e.py module it will perform a selenium test on the “scores web service” and fail
 the pipeline if the tests failed.
 5. Finalize - Will terminate our tested container
