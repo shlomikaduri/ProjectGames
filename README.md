@@ -5,6 +5,7 @@ World of Games
 Notes:
 The default application (docker) URL address is http://192.168.99.102
 You can change the URL application via /Tests/application_URL.txt
+The port is 5000
 
 e2e.py
 This file will have two functions.
