@@ -1,5 +1,5 @@
 from selenium import webdriver
-import Utils
+
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 
@@ -15,6 +15,7 @@ boolean value if it’s true or not.
 Will call our tests function.
 The main function will return -1 as an OS exit code if the tests failed and 0 if it passed.
 '''
+PORT_NUM = "5000"
 
 def scores_test_service(app_url):
     try:
@@ -52,11 +53,20 @@ The main function will return -1 as an OS exit code if the tests failed and 0 if
 '''
 def main_function():
     print("Hello, please enter application URL (for example http://192.168.99.102:5000/)")
+    # application_URL = 'http://192.168.99.102:5000/' #input()
     print("Reading the URL address from config file located at \\Tests\\application_URL.txt")
-    url_address_file = open(Utils.CONFIG_FILE_NAME , "r")
-    application_URL = url_address_file.read()
-    application_URL = application_URL+":"+Utils.URL_PORT_NUM+"/"
-    #application_URL = 'http://192.168.99.102:5000/' #input()
+
+    try:
+        url_address_file = open("application_URL.txt", "r")
+        application_URL = url_address_file.read()
+        url_address_file.close()
+
+    except IOError:
+        print("error IOFile, check if the file is located at \\Tests\\application_URL.txt")
+
+
+    application_URL = application_URL+":"+PORT_NUM+"/"
+
     if(scores_test_service(application_URL)==True):
         print("PASS")
         return 0
