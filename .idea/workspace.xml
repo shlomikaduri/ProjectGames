@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="443cccb6-d572-43e4-b9b3-d07e820b8c99" name="Default Changelist" comment="" />
+    <list default="true" id="443cccb6-d572-43e4-b9b3-d07e820b8c99" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Scores.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Scores.txt" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,8 +45,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Tests/e2e.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="101">
+              <caret line="50" column="3" lean-forward="true" selection-start-line="50" selection-start-column="3" selection-end-line="50" selection-end-column="3" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -100,7 +102,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MainScores.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
+            <state relative-caret-position="-163">
               <caret line="13" column="30" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="30" />
               <folding>
                 <element signature="e#267#307#0" expanded="true" />
@@ -130,7 +132,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-245" />
     <option name="y" value="185" />
     <option name="width" value="1400" />
@@ -359,7 +361,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MainScores.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
+        <state relative-caret-position="-163">
           <caret line="13" column="30" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="30" />
           <folding>
             <element signature="e#267#307#0" expanded="true" />
@@ -369,8 +371,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Tests/e2e.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="101">
+          <caret line="50" column="3" lean-forward="true" selection-start-line="50" selection-start-column="3" selection-end-line="50" selection-end-column="3" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
           </folding>
